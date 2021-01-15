@@ -1,0 +1,39 @@
+﻿@page "{id:int}"
+@model WebApp.DetailsModel
+@using WebApp.Models
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<table class="table">
+    <tr>
+        <td>ID : @Html.DisplayFor(model => model.naturalPerson.Id) </td>
+    </tr>
+    <tr>
+        <td>Name : @Html.DisplayFor(model => model.naturalPerson.Name) </td>
+    </tr>
+    <tr>
+        <td>CPF : @Html.DisplayFor(model => model.naturalPerson.CPF) </td>
+    </tr>
+    <tr>
+        <td>Gender : @Html.DisplayFor(model => model.naturalPerson.Gender) </td>
+    </tr>
+    <tr>
+        <td>Birthday : @Html.DisplayFor(model => model.naturalPerson.Birthday) </td>
+    </tr>
+    <tr>
+        <td>
+            Address :
+            @Html.DisplayFor(model => model.naturalPerson.Address.Country)
+            @Html.DisplayFor(model => model.naturalPerson.Address.State)
+            @Html.DisplayFor(model => model.naturalPerson.Address.City)
+            @Html.DisplayFor(model => model.naturalPerson.Address.ZipCode)
+            @Html.DisplayFor(model => model.naturalPerson.Address.AddressLine.Line1)
+            @Html.DisplayFor(model => model.naturalPerson.Address.AddressLine.Line2)
+        </td>
+    </tr>
+</table>
+<a asp-page="Index">Back to list</a>
+

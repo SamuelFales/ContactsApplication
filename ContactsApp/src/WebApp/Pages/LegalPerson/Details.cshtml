@@ -1,0 +1,36 @@
+﻿@page "{id:int}"
+@model WebApp.Legal.DetailsModel
+@using WebApp.Models
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<table class="table">
+    <tr>
+        <td>ID : @Html.DisplayFor(model => model.legalPerson.Id) </td>
+    </tr>
+    <tr>
+        <td>Name : @Html.DisplayFor(model => model.legalPerson.CompanyName) </td>
+    </tr>
+    <tr>
+        <td>CNPJ : @Html.DisplayFor(model => model.legalPerson.CNPJ) </td>
+    </tr>
+    <tr>
+        <td>Trade Name : @Html.DisplayFor(model => model.legalPerson.TradeName) </td>
+    </tr>
+    <tr>
+        <td>
+            Address :
+            @Html.DisplayFor(model => model.legalPerson.Address.Country)
+            @Html.DisplayFor(model => model.legalPerson.Address.State)
+            @Html.DisplayFor(model => model.legalPerson.Address.City)
+            @Html.DisplayFor(model => model.legalPerson.Address.ZipCode)
+            @Html.DisplayFor(model => model.legalPerson.Address.AddressLine.Line1)
+            @Html.DisplayFor(model => model.legalPerson.Address.AddressLine.Line2)
+        </td>
+    </tr>
+</table>
+<a asp-page="Index">Back to list</a>
+

@@ -1,0 +1,60 @@
+﻿@page
+@model WebApp.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+@{
+    if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <div class="alert alert-success" id="success-alert" style="margin-top: 40px;">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>@Model.Message ! </strong>
+        </div>
+    }
+}
+
+<form method="post">
+    <table class="table">
+        <tr>
+            <th>Name : <input type="text" asp-for="naturalPerson.Name" /> </th>
+        </tr>
+        <tr>
+            <th>CPF :<input type="text" asp-for="naturalPerson.CPF" /> </th>
+        </tr>
+        <tr>
+            <th>Gender :<input type="text" asp-for="naturalPerson.Gender" /> </th>
+        </tr>
+        <tr>
+            <th>Birthday : <input type="text" asp-for="naturalPerson.Birthday" /> </th>
+        </tr>
+    </table>
+    <table class="table">
+        <tr>
+            Address:
+        </tr>
+        <tr>
+            <th>Country : <input type="text" asp-for="naturalPerson.Address.Country" /> </th>
+        </tr>
+        <tr>
+            <th>State :<input type="text" asp-for="naturalPerson.Address.State" /> </th>
+        </tr>
+        <tr>
+            <th>City :<input type="text" asp-for="naturalPerson.Address.City" /> </th>
+        </tr>
+        <tr>
+            <th>ZipCode : <input type="text" asp-for="naturalPerson.Address.ZipCode" /> </th>
+        </tr>
+        <tr>
+            <th>Line1 : <input type="text" asp-for="naturalPerson.Address.AddressLine.Line1" /> </th>
+        </tr>
+        <tr>
+            <th>Line2 : <input type="text" asp-for="naturalPerson.Address.AddressLine.Line2" /> </th>
+        </tr>
+    </table>
+    <input type="hidden" asp-for="naturalPerson.Id" />
+    <input type="hidden" asp-for="naturalPerson.Address.Id" />
+    <input type="submit" value="Edit" />
+    <a asp-page="Index">Back to list</a>
+</form>
